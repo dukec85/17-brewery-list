@@ -1,0 +1,30 @@
+{{outlet}} {{log model.data}}
+<div class="top-container">
+  <div class="top-container__inner">
+    <h1 class="top-title">New Breweries</h1>
+  </div>
+</div>
+
+<div class="main-container">
+  <div class="main-container__inner">
+    <div class="brewery-list">
+
+      {{#each model.data as | brewery |}}
+        {{#if brewery.images}}
+          <div class="brewery-list__item">
+            <div class="brewery-list__item-frame">
+              <img src="{{brewery.images.large}}" alt="" class="brewery-list__item-frame--img">
+            </div>
+            <div class="brewery-list__item-info">
+              <h3 class="brewery-list__item-info--name">{{brewery.name}}</h3>
+              <p class="brewery-list__item--date">EST {{brewery.established}}</p>
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+{{outlet}}
